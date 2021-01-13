@@ -1,0 +1,7 @@
+Sidorov Ivan Petrovich 78 98 45
+Kirillov Sergey Petrovich 98 88 83
+Petrenko Ilya Vladimirovich 88 97 89
+Smolov Yegor Pavlovich 87 89 88
+Golovin Aleksandr Pavlovich 88 95 75
+Sidorov Aleksandr Petrovich 77 88 99
+Petrenko Yegor Petrovich 87 89 98
