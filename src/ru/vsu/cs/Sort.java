@@ -39,7 +39,7 @@ public class Sort {
             }
         });
         if (listEnrollee.size() <= quantityBudget) {
-            return this.listEnrollee;
+            return listEnrollee;
         } else {
             List<Enrollee> list = new ArrayList<>();
             for (int i = 0; i < quantityBudget; i++) {
