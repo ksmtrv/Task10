@@ -3,16 +3,20 @@ package ru.vsu.cs;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Admission {
+public class Sort {
 
     private List<Enrollee> listEnrollee;
 
-    public Admission() {
+    public Sort() {
         listEnrollee = new ArrayList<>();
     }
 
     public void addEnrollee(Enrollee enrollee) {
         listEnrollee.add(enrollee);
+    }
+
+    public List<Enrollee> getListEnrollee() {
+        return listEnrollee;
     }
 
     public List<Enrollee> getEnrolleeByBudget(int quantityBudget) {
@@ -43,9 +47,5 @@ public class Admission {
             }
             return list;
         }
-    }
-
-    public List<Enrollee> getListEnrollee() {
-        return listEnrollee;
     }
 }

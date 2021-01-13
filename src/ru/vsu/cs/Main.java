@@ -12,16 +12,16 @@ public class Main {
         String faculty = readString("the name of the faculty: ");
         int quantityBudget = readInt("number of budget places: ");
 
-        Admission admission = new Admission();
-        readFile(faculty, admission);
+        Sort sort = new Sort();
+        readFile(faculty, sort);
 
-        List<Enrollee> listEnrollee = admission.getListEnrollee();
+        List<Enrollee> listEnrollee = sort.getListEnrollee();
 
         System.out.println("List of applicants: ");
         printListEnrollee(listEnrollee);
         System.out.println();
 
-        List<Enrollee> enrolleeByBudget = admission.getEnrolleeByBudget(quantityBudget);
+        List<Enrollee> enrolleeByBudget = sort.getEnrolleeByBudget(quantityBudget);
 
         writeFile(enrolleeByBudget, faculty);
         System.out.println("List of applicants received on the budget: ");
@@ -40,7 +40,7 @@ public class Main {
         return scanner.nextLine();
     }
 
-    private static void readFile(String faculty, Admission admission) {
+    private static void readFile(String faculty, Sort sort) {
         File input = new File("src\\ru\\vsu\\cs\\file\\" + faculty + ".txt");
         try {
             Scanner scannerFile = new Scanner(input);
@@ -52,7 +52,7 @@ public class Main {
 
                 Enrollee enrollee = new Enrollee(words[0], words[1], words[2],
                         Integer.parseInt(words[3]), Integer.parseInt(words[4]), Integer.parseInt(words[5]));
-                admission.addEnrollee(enrollee);
+                sort.addEnrollee(enrollee);
             }
             scannerFile.close();
         } catch (FileNotFoundException fileNotFoundException) {
@@ -63,7 +63,9 @@ public class Main {
 
     private static void writeFile(List<Enrollee> list, String faculty) throws Exception {
         FileWriter output = new FileWriter("src\\ru\\vsu\\cs\\file\\" + faculty + "-budget.txt");
-        output.write(String.valueOf(list));
+        for (int i = 0; i < list.size(); i++) {
+            output.write(list.get(i) + "\n");
+        }
         output.close();
     }
 
