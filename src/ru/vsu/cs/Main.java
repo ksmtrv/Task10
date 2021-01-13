@@ -21,11 +21,11 @@ public class Main {
         printListEnrollee(listEnrollee);
         System.out.println();
 
-        List<Enrollee> enrolleeByBudget = sort.getEnrolleeByBudget(quantityBudget);
+        List<Enrollee> listEnrolleeByBudget = sort.getListEnrolleeByBudget(quantityBudget);
 
-        writeFile(enrolleeByBudget, faculty);
+        writeFile(listEnrolleeByBudget, faculty);
         System.out.println("List of applicants received on the budget: ");
-        printListEnrollee(enrolleeByBudget);
+        printListEnrollee(listEnrolleeByBudget);
     }
 
     private static int readInt(String name) {
@@ -48,10 +48,10 @@ public class Main {
 
             while (scannerFile.hasNextLine()) {
                 line = scannerFile.nextLine();
-                String[] words = line.split("[ \\-#:;$]");
+                String[] enrolleeAtribute = line.split("[ \\-#:;$]");
 
-                Enrollee enrollee = new Enrollee(words[0], words[1], words[2],
-                        Integer.parseInt(words[3]), Integer.parseInt(words[4]), Integer.parseInt(words[5]));
+                Enrollee enrollee = new Enrollee(enrolleeAtribute[0], enrolleeAtribute[1], enrolleeAtribute[2],
+                        Integer.parseInt(enrolleeAtribute[3]), Integer.parseInt(enrolleeAtribute[4]), Integer.parseInt(enrolleeAtribute[5]));
                 sort.addEnrollee(enrollee);
             }
             scannerFile.close();

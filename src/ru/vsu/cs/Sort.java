@@ -19,7 +19,7 @@ public class Sort {
         return listEnrollee;
     }
 
-    public List<Enrollee> getEnrolleeByBudget(int quantityBudget) {
+    public List<Enrollee> getListEnrolleeByBudget(int quantityBudget) {
         listEnrollee.sort((o1, o2) -> {
             int compareTo = Integer.compare(o2.getSum(), o1.getSum());
             if (compareTo == 0) {
